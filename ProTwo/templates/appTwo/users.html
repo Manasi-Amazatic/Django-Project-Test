@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Django Level Two</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "first_app/css/mystyle.css" %}"/>
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Hi, Please sign up here!</h1>
+        <form method="POST">
+          {{ form.as_p }}
+          {% csrf_token %}
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+      </div>
+    </div>
+    <!-- <h2>Here are your users for appTwo:</h2>
+
+    {% if users %}
+
+    <ol>
+        {% for person in users %}
+        <li>User Info</li>
+        <ul>
+            <li>First Name: {{person.first_name}}</li>
+            <li>Last Name: {{person.last}}</li>
+            <li>Email: {{person.email}}</li>
+            
+        </ul>
+        {% endfor %}
+    </ol>
+
+    {% endif %}
+   -->
+  </body>
+</html>
